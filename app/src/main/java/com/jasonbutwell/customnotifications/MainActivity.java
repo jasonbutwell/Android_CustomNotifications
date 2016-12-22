@@ -36,6 +36,11 @@ public class MainActivity extends AppCompatActivity {
         // Which intent should be called when notification is clicked?
 
         Intent intent = new Intent(this, NotificationActivity.class);
+
+        // We pass in this key, value in order to cancel the Notification when we call the NotificationActivity class using the Intent
+
+        intent.putExtra("notifyID", NOTIFY_ID);
+
         PendingIntent pendingIntent = PendingIntent.getActivity(this, NOTIFY_ID, intent, PendingIntent.FLAG_CANCEL_CURRENT);
 
         // set the icon for the notification
