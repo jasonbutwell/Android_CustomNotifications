@@ -80,6 +80,16 @@ public class MainActivity extends AppCompatActivity {
         builder.addAction(android.R.drawable.sym_action_call, "Call", pendingIntent);
         builder.addAction(android.R.drawable.sym_action_chat, "Chat", pendingIntent);
 
+        // Set the visibility to show on the lock screen
+
+        // Different modes on offer here:
+        
+        // Notification.VISIBILITY_PUBLIC   - Shows on lock screen
+        // Notification.VISIBILITY_SECRET   - Does not show on lock screen
+        // Notification.VISIBILITY_PRIVATE  - Shows the notification with the contents hidden
+
+        builder.setVisibility(Notification.VISIBILITY_PUBLIC);
+
         // builds the notification ready for use
 
         Notification notification = builder.build();
